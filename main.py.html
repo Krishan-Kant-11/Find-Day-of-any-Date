@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #6a8759;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">a = int(input(</span><span class="s1">&quot;Year: &quot;</span><span class="s0">))</span>
+<span class="s0">b = int(input(</span><span class="s1">&quot;Month number: &quot;</span><span class="s0">))</span>
+<span class="s0">c = int(input(</span><span class="s1">&quot;Date: &quot;</span><span class="s0">))</span>
+
+<span class="s2">def </span><span class="s0">function(a):</span>
+    <span class="s2">if </span><span class="s0">a%</span><span class="s3">4 </span><span class="s0">== </span><span class="s3">0 </span><span class="s2">and </span><span class="s0">a%</span><span class="s3">100 </span><span class="s0">!= </span><span class="s3">0</span><span class="s0">:</span>
+        <span class="s2">return </span><span class="s1">&quot;leap&quot;</span>
+    <span class="s2">elif </span><span class="s0">a%</span><span class="s3">100 </span><span class="s0">== </span><span class="s3">0 </span><span class="s2">and </span><span class="s0">a%</span><span class="s3">400 </span><span class="s0">!= </span><span class="s3">0</span><span class="s0">:</span>
+        <span class="s2">return </span><span class="s1">&quot;not leap&quot;</span>
+    <span class="s2">elif </span><span class="s0">a%</span><span class="s3">100 </span><span class="s0">== </span><span class="s3">0 </span><span class="s2">and </span><span class="s0">a%</span><span class="s3">400 </span><span class="s0">== </span><span class="s3">0</span><span class="s0">:</span>
+        <span class="s2">return </span><span class="s1">&quot;leap&quot;</span>
+    <span class="s2">else</span><span class="s0">:</span>
+        <span class="s2">return </span><span class="s1">&quot;not leap&quot;</span>
+    
+<span class="s0">d = [</span><span class="s3">31</span><span class="s2">, </span><span class="s3">28</span><span class="s2">, </span><span class="s3">31</span><span class="s2">, </span><span class="s3">30</span><span class="s2">, </span><span class="s3">31</span><span class="s2">, </span><span class="s3">30</span><span class="s2">, </span><span class="s3">31</span><span class="s2">, </span><span class="s3">31</span><span class="s2">, </span><span class="s3">30</span><span class="s2">, </span><span class="s3">31</span><span class="s2">, </span><span class="s3">30</span><span class="s2">, </span><span class="s3">31</span><span class="s0">]    </span><span class="s4">#Normal Year</span>
+<span class="s0">e = [</span><span class="s3">31</span><span class="s2">, </span><span class="s3">29</span><span class="s2">, </span><span class="s3">31</span><span class="s2">, </span><span class="s3">30</span><span class="s2">, </span><span class="s3">31</span><span class="s2">, </span><span class="s3">30</span><span class="s2">, </span><span class="s3">31</span><span class="s2">, </span><span class="s3">31</span><span class="s2">, </span><span class="s3">30</span><span class="s2">, </span><span class="s3">31</span><span class="s2">, </span><span class="s3">30</span><span class="s2">, </span><span class="s3">31</span><span class="s0">]     </span><span class="s4">#Leap Year</span>
+
+<span class="s0">totaldays1 = </span><span class="s3">0</span>
+<span class="s0">totaldays2 = </span><span class="s3">0</span>
+
+<span class="s2">if </span><span class="s0">function(a) == </span><span class="s1">&quot;leap&quot; </span><span class="s0">:</span>
+    <span class="s2">for </span><span class="s0">i </span><span class="s2">in </span><span class="s0">e[</span><span class="s3">0</span><span class="s0">:(b-</span><span class="s3">1</span><span class="s0">)]:</span>
+        <span class="s0">totaldays2 += i</span>
+<span class="s2">elif </span><span class="s0">function(a) == </span><span class="s1">&quot;not leap&quot; </span><span class="s0">:</span>
+    <span class="s2">for </span><span class="s0">i </span><span class="s2">in </span><span class="s0">d[</span><span class="s3">0</span><span class="s0">:(b-</span><span class="s3">1</span><span class="s0">)]:</span>
+        <span class="s0">totaldays1 += i</span>
+
+<span class="s0">f = totaldays1 + c</span>
+<span class="s0">g = totaldays2 + c</span>
+
+<span class="s0">j = a -</span><span class="s3">1</span>
+<span class="s0">y = abs(int(str(j)[-</span><span class="s3">2</span><span class="s0">:]))</span>
+<span class="s0">m = int((y/</span><span class="s3">4</span><span class="s0">))</span>
+<span class="s0">n = int(str(j)[:</span><span class="s3">2</span><span class="s0">])</span>
+<span class="s0">h = int((n*</span><span class="s3">100</span><span class="s0">) % </span><span class="s3">400</span><span class="s0">)</span>
+
+<span class="s2">def </span><span class="s0">century(h) :</span>
+
+    <span class="s2">if </span><span class="s0">h == </span><span class="s3">0</span><span class="s0">:</span>
+
+        <span class="s2">return </span><span class="s1">'0'</span>
+
+    <span class="s2">elif </span><span class="s0">h == </span><span class="s3">100</span><span class="s0">:</span>
+
+        <span class="s2">return </span><span class="s1">'5'</span>
+
+    <span class="s2">elif </span><span class="s0">h == </span><span class="s3">200</span><span class="s0">:</span>
+
+        <span class="s2">return </span><span class="s1">'3'</span>
+
+    <span class="s2">elif </span><span class="s0">h == </span><span class="s3">300</span><span class="s0">:</span>
+
+        <span class="s2">return </span><span class="s1">'1'</span>
+
+<span class="s0">k = int(century(h))</span>
+
+<span class="s2">def </span><span class="s0">last():</span>
+    <span class="s2">if </span><span class="s0">function(a) == </span><span class="s1">&quot;not leap&quot;</span><span class="s0">:</span>
+        <span class="s2">return </span><span class="s0">(f + y + m + k)%</span><span class="s3">7</span>
+    <span class="s2">elif </span><span class="s0">function(a) == </span><span class="s1">&quot;leap&quot;</span><span class="s0">:</span>
+        <span class="s2">return </span><span class="s0">(g + y + m + k)%</span><span class="s3">7</span>
+
+<span class="s2">def </span><span class="s0">day():</span>
+    <span class="s2">if </span><span class="s0">last() == </span><span class="s3">0</span><span class="s0">:</span>
+        <span class="s2">return </span><span class="s1">&quot;Day: Sunday&quot;</span>
+    <span class="s2">elif </span><span class="s0">last() == </span><span class="s3">1</span><span class="s0">:</span>
+        <span class="s2">return </span><span class="s1">&quot;Day: Monday&quot;</span>
+    <span class="s2">elif </span><span class="s0">last() == </span><span class="s3">2</span><span class="s0">:</span>
+        <span class="s2">return </span><span class="s1">&quot;Day: Tuesday&quot;</span>
+    <span class="s2">elif </span><span class="s0">last() == </span><span class="s3">3</span><span class="s0">:</span>
+        <span class="s2">return </span><span class="s1">&quot;Day: Wednesday&quot;</span>
+    <span class="s2">elif </span><span class="s0">last() == </span><span class="s3">4</span><span class="s0">:</span>
+        <span class="s2">return </span><span class="s1">&quot;Day: Thursday&quot;</span>
+    <span class="s2">elif </span><span class="s0">last() == </span><span class="s3">5</span><span class="s0">:</span>
+        <span class="s2">return </span><span class="s1">&quot;Day: Friday&quot;</span>
+    <span class="s2">elif </span><span class="s0">last() == </span><span class="s3">6</span><span class="s0">:</span>
+        <span class="s2">return </span><span class="s1">&quot;Day: Saturday&quot;</span>
+
+<span class="s0">print(day())</span></pre>
+</body>
+</html>
